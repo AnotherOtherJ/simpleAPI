@@ -1,10 +1,9 @@
 import mysql from "mysql2";
 import type { Request, Response } from "express";
+import { credentials } from "../credentials";
 
 const con = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "root",
+  ...credentials,
   database: "users",
 });
 

@@ -10,6 +10,10 @@ depending on your package manager
 
 > pnpm install / yarn / npm install
 
+Also you need mysql on your system
+
+You can change login credentials in credentials.ts file (default are root:root (yeah I know))
+
 ## How to start
 
 > pnpm dev

@@ -1,6 +1,7 @@
 import express from "express";
 import Routes from "./routes/Routes";
 import mysql from "mysql2";
+import { credentials } from "./credentials";
 
 const app = express(),
   port = process.env.PORT || 3000;
@@ -11,11 +12,7 @@ app.get("/", (req, res) => {
 
 app.listen(port);
 
-const con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "root",
-});
+const con = mysql.createConnection(credentials);
 
 con.connect(err => {
   if (err) return console.log("can't connect to mysql " + err);
